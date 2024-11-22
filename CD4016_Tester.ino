@@ -42,13 +42,14 @@ void checkSwitch(int controlPin, int inputPin, int outputPin) {
 } 
 
 void loop() {
-  Serial.println("Guide: F-P F-P F-P F-P means there is nothing connected or the IC is fully dead.");
-  Serial.println("Expected is that all pass.");
+  Serial.println("4016 type CMOS Quad Bilateral Switch tester by QOTF-Alexi.");
+  Serial.println("Make sure all outputs are pulled down with a resistor.");
+  Serial.println("Alternating pass-fail usually means no IC is inserted or that the IC is fully dead.");
   checkSwitch(A_CTL, A_IN, A_OUT);
   checkSwitch(B_CTL, B_IN, B_OUT);
   checkSwitch(C_CTL, C_IN, C_OUT);
   checkSwitch(D_CTL, D_IN, D_OUT);
-  Serial.println("DONE TESTING");
+  Serial.println("DONE TESTING. Insert next IC and press RESET.");
   while(true){
   }
 }
